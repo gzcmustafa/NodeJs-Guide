@@ -1,3 +1,4 @@
-let sayName = require('./employe.js')
+let employe = require('./employe')
 
-sayName("Kerem")
+employe.sayName("Kerem")
+employe.sayAge(20)
