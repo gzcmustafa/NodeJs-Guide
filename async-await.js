@@ -15,17 +15,18 @@ const listBooks = () => {
 const addBook = (newBook) => {
     const promise1 = new Promise((resolve,reject)=>{
         books.push(newBook);
-       
+        resolve(books)
     })
     return promise1;
 }
 
-addBook({ name: "Kitap 4", author: "Yazar 4" })
-  .then(() => {
-    console.log("YENI LISTE");
-    listBooks();
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-  listBooks();
+async function showBooks(){
+    try{
+         await addBook({name:"kitap 155",author:"yazar 155"})
+         listBooks();
+    }
+    
+    catch{
+        console.log(error);
+    }
+}
